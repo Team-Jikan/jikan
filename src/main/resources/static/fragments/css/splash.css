@@ -1,0 +1,26 @@
+body {
+    background: #9FDAD6 url("../../images/jikanSplashBackground.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
+.textBox {
+    float: left;
+    width: 150px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.blue {
+    background: #13b4ff;
+}
+
+.purple {
+    background: #ab3fdd;
+}
+
+.jikanColor {
+    background: #9FDAD6;
+}
