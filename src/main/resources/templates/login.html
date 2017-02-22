@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="../static/css/skeleton.css">
+    <link rel="stylesheet" href="../static/fragments/css/login.css">
 </head>
 <body>
 <div class="container">
     <form>
         <div class="columns" id="loginBox">
             <div class="six columns offset-by-three">
-                <label for="Username">Username</label>
-                <input class="u-full-width" type="text" placeholder="Username" id="Username">
-                <label for="Password">Password</label>
-                <input class="u-full-width" type="password" placeholder="Password" id="Password">
-                <input class="u-full-width" type="submit" value="Login">
+                <label for="usernameId" id="usernameLabel">Username</label>
+                <input class="u-full-width" id="usernameId" type="text" placeholder="Username" >
+                <label for="passwordId" id="passwordLabel">Password</label>
+                <input class="u-full-width" id="passwordId" type="password" placeholder="Password" >
+                <br><br>
+                <input class="u-full-width" id="loginId" type="submit" value="Login">
             </div>
         </div>
     </form>
