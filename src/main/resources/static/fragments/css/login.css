@@ -1,0 +1,16 @@
+body{
+    background-color: #9fdad6;
+}
+
+#loginId{
+    background-color: #2b8b8a;
+    color: #d6dde4;
+}
+
+#passwordLabel{
+    color: #2b8b8a;
+}
+
+#usernameLabel{
+    color: #2b8b8a;
+}
