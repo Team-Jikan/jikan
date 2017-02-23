@@ -2,55 +2,36 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Register</title>
     <link rel="stylesheet" href="../static/css/skeleton.css">
     <link rel="stylesheet" href="../static/fragments/css/registration.css">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="container">
-<h1>REGISTER</h1>
-
-<form>
-    <div class="row">
-        <div class="six columns">
-            <label for="firstname">First Name</label>
-            <input class="u-full-width" type="text" name="firstname" placeholder="Please enter your first name" id="firstname">
+    <img src="../static/images/jikanLogoBlue.png" height="115" width="115"/>
+    <form>
+        <div class="columns" id="loginBox">
+            <div class="six columns offset-by-three">
+                <h1>REGISTER</h1>
+                <label for="username">Username</label>
+                <input class="u-full-width" type="text" name="username" placeholder="Please choose a username"
+                       id="username">
+                <label for="email">Email</label>
+                <input class="u-full-width" type="email" name="email" placeholder="Please enter your email address"
+                       id="email">
+                <label for="password">Password</label>
+                <input class="u-full-width" type="password" name="password" placeholder="Please enter your password"
+                       id="password">
+                <label for="verifypassword">Verify Password</label>
+                <input class="u-full-width" type="password" name="verifypassword"
+                       placeholder="Please re-enter your password" id="verifypassword">
+                <br><br>
+                <input class="button-primary u-full-width" type="submit" value="Register">
+            </div>
         </div>
-        <div class="six columns">
-            <label for="lastname">Last Name</label>
-            <input class="u-full-width" type="text" name="lastname" placeholder="Please enter your last name" id="lastname">
-        </div>
-    </div>
-    <div class="row">
-        <div class="six columns">
-            <label for="phone">Phone Number</label>
-            <input class="u-full-width" type="tel" name="phonenumber" placeholder="Please enter your phone number" id="phone">
-        </div>
-        <div class="six columns">
-            <label for="username">Username</label>
-            <input class="u-full-width" type="text" name="username" placeholder="Please choose a username" id="username">
-        </div>
-    </div>
-    <div class="row">
-        <div class="six columns">
-            <label for="email">Email</label>
-            <input class="u-full-width" type="email" name="email" placeholder="Please enter your email address" id="email">
-        </div>
-        <div class="six columns">
-            <label for="password">Password</label>
-            <input class="u-full-width" type="password" name="password" placeholder="Please enter your password" id="password">
-        </div>
-    </div>
-    <div class="row">
-        <div class="six columns">
-            <label for="verifypassword">Verify Password</label>
-            <input class="u-full-width" type="password" name="verifypassword" placeholder="Please re-enter your password" id="verifypassword">
-        </div>
-        <div class="six columns">
-        </div>
-    </div>
-    <input class="button-primary u-full-width" type="submit" value="Register">
-</form>
+    </form>
 </div>
 </body>
 </html>
