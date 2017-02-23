@@ -61,6 +61,14 @@ public class User {
 
     }
 
+    public User(User user) {
+        id = user.id;
+        username = user.username;
+        password = user.password;
+        email = user.email;
+        projects = user.projects;
+    }
+
     //-----------SETTERS & GETTERS-----------//
 
     public int getId() {
