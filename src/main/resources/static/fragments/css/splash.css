@@ -5,16 +5,21 @@ body {
     color: white;
 }
 
-.headerLeftTextBox {
+.headerLeftImage {
     float: left;
+    margin-top: -2%;
+    margin-left: -3%;
     position: absolute;
-    width: 190px;
-    height: 55px;
+    width: 150px;
+    height: 150px;
     border: 1px solid rgba(0, 0, 0, .2);
 }
-/*.headerRightTextBox {*/
-    /*float: right;*/
-    /*position: relative;  }*/
+.headerRightTextBox {
+    float: right;
+    position: relative;
+    margin-top: 7%;
+    margin-bottom: -5%;
+}
 
 .blue {
     background: #13b4ff;
@@ -26,7 +31,8 @@ body {
 
 .jikanColor {
     /*background: #CE0009;*/
-    background: #1EAEDB;
+    /*background: #1EAEDB;*/
+    /*background: #28ff8e;*/
 }
 .center {
     position: absolute;
@@ -39,5 +45,6 @@ body {
 
 #topLeftLogo {
     position: relative;
-    left: 25%;
+    left: 23%;
+    color: #FFF;
 }
