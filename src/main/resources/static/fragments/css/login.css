@@ -20,7 +20,8 @@ h1 {
     font-weight: 700;
 }
 
-#loginId{
+/*loginId*/
+#login{
     background-color: #33c3f0;
     color: #ecf3e9;
 }
