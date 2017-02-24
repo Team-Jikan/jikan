@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Register</title>
-    <link rel="stylesheet" href="../../static/css/skeleton.css">
-    <link rel="stylesheet" href="../../static/fragments/css/registration.css">
-    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/skeleton.css"/>
+    <link rel="stylesheet" href="/fragments/css/registration.css"/>
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'/>
 </head>
 <body>
 <div class="container">
@@ -32,8 +32,8 @@
                 <label for="password_confirm">Verify Password</label>
                 <input class="u-full-width" type="password" name="password_confirm"
                        placeholder="Please re-enter your password" id="password_confirm"/>
-                <br><br>
-                <input class="button-primary u-full-width" type="submit" value="Register">
+                <br/><br/>
+                <input class="button-primary u-full-width" type="submit" value="Register"/>
                 <input type="hidden" th:attr="name=${_csrf.parameterName},value=${_csrf.token}"/>
             </div>
         </div>
