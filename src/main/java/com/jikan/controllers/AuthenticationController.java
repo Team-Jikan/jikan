@@ -30,13 +30,13 @@ public class AuthenticationController {
 
     @GetMapping("/login")
     public String showLoginForm() {
-        return "login";
+        return "users/login";
     }
 
     @GetMapping("/register")
     public String showForm(Model viewModel) {
         viewModel.addAttribute("user", new User());
-        return "users/register";
+        return "users/registration";
     }
 
     @PostMapping("/register")
@@ -57,7 +57,7 @@ public class AuthenticationController {
         if (validation.hasErrors()) {
             viewModel.addAttribute("errors", validation);
             viewModel.addAttribute("user", user);
-            return "users/create";
+            return "users/registration";
         }
 
         String hashedPassword = encoder.encode(user.getPassword()); // hash the users password

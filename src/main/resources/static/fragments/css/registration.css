@@ -1,6 +1,6 @@
 body {
     color: white;
-    background: url("../../../static/images/reg-train.jpg");
+    background: url("/images/reg-train.jpg");
     -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
