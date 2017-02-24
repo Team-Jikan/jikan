@@ -11,24 +11,30 @@
 <body>
 <div class="container">
     <img src="../static/images/jikanLogoBlue.png" height="115" width="115"/>
-    <form>
+    <form th:action="@{/users/create}" th:method="POST" th:object="${user}">
         <div class="columns" id="loginBox">
             <div class="six columns offset-by-three">
                 <h1>REGISTER</h1>
                 <label for="username">Username</label>
-                <input class="u-full-width" type="text" name="username" placeholder="Please choose a username"
-                       id="username">
+                <input class="u-full-width" th:field="*{username}" type="text" name="username"
+                       placeholder="Please choose a username"
+                       id="username"/>
+                <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"/>
                 <label for="email">Email</label>
-                <input class="u-full-width" type="email" name="email" placeholder="Please enter your email address"
-                       id="email">
+                <input class="u-full-width" th:field="*{email}" type="email" name="email"
+                       placeholder="Please enter your email address"
+                       id="email"/>
+                <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"/>
                 <label for="password">Password</label>
-                <input class="u-full-width" type="password" name="password" placeholder="Please enter your password"
-                       id="password">
+                <input class="u-full-width" th:field="*{password}" type="password" name="password" placeholder="Please enter your password"
+                       id="password"/>
+                <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"/>
                 <label for="verifypassword">Verify Password</label>
                 <input class="u-full-width" type="password" name="verifypassword"
-                       placeholder="Please re-enter your password" id="verifypassword">
+                       placeholder="Please re-enter your password" id="verifypassword"/>
                 <br><br>
                 <input class="button-primary u-full-width" type="submit" value="Register">
+                <input type="hidden" th:attr="name=${_csrf.parameterName},value=${_csrf.token}"/>
             </div>
         </div>
     </form>

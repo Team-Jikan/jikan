@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Login</title>
     <link rel="stylesheet" href="../static/css/skeleton.css">
     <link rel="stylesheet" href="../static/fragments/css/login.css">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="container">
-    <form>
+    <form th:action="@{/login}" th:method="POST">
         <div class="columns" id="loginBox">
             <div class="six columns offset-by-three">
                 <h1>LOGIN</h1>
-                <label for="usernameId" id="usernameLabel">Username</label>
-                <input class="u-full-width" id="usernameId" type="text" placeholder="Username" >
-                <label for="passwordId" id="passwordLabel">Password</label>
-                <input class="u-full-width" id="passwordId" type="password" placeholder="Password" >
+                <label for="username" id="usernameLabel">Username</label>
+                <input class="u-full-width" id="usernameId" type="text" name="username" placeholder="Username"/>
+                <label for="password" id="passwordLabel">Password</label>
+                <input class="u-full-width" id="passwordId" type="password" placeholder="Password"/>
                 <br><br>
-                <input class="u-full-width" id="loginId" type="submit" value="Login">
+                <input class="u-full-width" id="loginId" type="submit" value="Login"/>
             </div>
         </div>
     </form>
