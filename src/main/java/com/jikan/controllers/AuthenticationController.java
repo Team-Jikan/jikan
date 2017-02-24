@@ -36,10 +36,10 @@ public class AuthenticationController {
     @GetMapping("/register")
     public String showForm(Model viewModel) {
         viewModel.addAttribute("user", new User());
-        return "users/create";
+        return "users/register";
     }
 
-    @PostMapping("users/create")
+    @PostMapping("/register")
     public String registerUser(
             @Valid User user,
             Errors validation,
@@ -63,9 +63,9 @@ public class AuthenticationController {
         String hashedPassword = encoder.encode(user.getPassword()); // hash the users password
         user.setPassword(hashedPassword);
 
-        User newUser = new User(repository.save(user));  // save the user to the database
+        repository.save(user);  // save the user to the database
 
-        viewModel.addAttribute("user", newUser);
-        return "redirect:/login";  // redirect the user to the login page
+        viewModel.addAttribute("user", user);
+        return "redirect:/projects";  // redirect the user to the login page
     }
 }

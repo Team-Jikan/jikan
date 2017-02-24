@@ -21,7 +21,7 @@ public class UsersController {
     public String showUser(@PathVariable Integer id, Model viewModel) {
         User user = usersDao.findById(id);
         viewModel.addAttribute("user", user);
-        return "users/show";
+        return "users/profile";
 
     }
 
