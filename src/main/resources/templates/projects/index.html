@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -6,6 +7,19 @@
     <title>Projects</title>
 </head>
 <body>
-    <h1>Test</h1>
+    <h1>Projects</h1>
+    <p th:each="project : ${projects}">
+    <h2 style="text-align: center"><span th:text="${project.projectname}"/></h2>
+    <h3 style="text-align: center"><span th:text="${project.projectdescription}"/></h3>
+    </p>
+    <div id="load-projects"></div>
+
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"
+    ></script>
+    <script src="/scripts/projects-list.js"></script>
 </body>
 </html>
+<!--projects--->
