@@ -48,8 +48,8 @@ public class ProjectsController {
 
     @GetMapping("/projects/create")
     public String viewCreatePostForm (@ModelAttribute Project project, Model viewModel) {
-        viewModel.addAttribute("projectt", project);
-        return "posts/create";
+        viewModel.addAttribute("project", project);
+        return "projects/create";
     }
 
     @PostMapping("projects/create")
