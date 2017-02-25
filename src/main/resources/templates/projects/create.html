@@ -12,29 +12,35 @@
 </head>
 <body>
 <div class="container">
-    <form>
+    <form th:action="@{/projects/create}" th:method="POST" th:object="${project}" enctype="multipart/form-data">
         <div class="columns" id="loginBox">
             <div class="six columns offset-by-three">
                 <h1>Create Project</h1>
                 <label for="projectName" id="project">Project Name</label>
-                <input class="u-full-width" id="projectName" name="projectname" type="text" placeholder="Project Name"/>
+                <input th:field="*{projectname}" class="u-full-width" id="projectName" name="projectname" type="text" placeholder="Project Name"/>
+                <p th:if="${#fields.hasErrors('projectname')}" th:errors="*{projectname}" />
 
                 <label for="company" id="company">Customer</label>
-                <input class="u-full-width" id="companyName" name="customer" type="text" placeholder="Company"/>
+                <input th:field="*{customer}" class="u-full-width" id="companyName" name="customer" type="text" placeholder="Company"/>
+                <p th:if="${#fields.hasErrors('customer')}" th:errors="*{customer}" />
 
                 <label for="customer" id="customer">Contact Name</label>
-                <input class="u-full-width" id="customerName" name="contactname" type="text" placeholder="Customer Name"/>
+                <input th:field="*{contactname}" class="u-full-width" id="customerName" name="contactname" type="text" placeholder="Customer Name"/>
+                <p th:if="${#fields.hasErrors('contactname')}" th:errors="*{contactname}" />
 
                 <label for="contact" id="contact">Contact Phone Number</label>
-                <input class="u-full-width" id="contactName" name="contactphone" type="text" placeholder="(area code) Phone Number"/>
+                <input th:field="*{contactphone}" class="u-full-width" id="contactName" name="contactphone" type="text" placeholder="(area code) Phone Number"/>
+                <p th:if="${#fields.hasErrors('contactphone')}" th:errors="*{contactphone}" />
 
                 <label for="email" id="email">Contact E-mail</label>
-                <input class="u-full-width" id="emailName" name="contactemail" type="text" placeholder="email"/>
+                <input th:field="*{contactemail}" class="u-full-width" id="emailName" name="contactemail" type="text" placeholder="email"/>
+                <p th:if="${#fields.hasErrors('contactemail')}" th:errors="*{contactemail}" />
 
                 <div class="six columns zero">
                     <label for="startDate" id="startDate">Start Date</label>
 
-                        <input type="text" name="startdate" value="" size="25"/>
+                        <input th:field="*{startdate}" type="text" name="startdate" value="" size="25"/>
+                    <p th:if="${#fields.hasErrors('startdate')}" th:errors="*{startdate}" />
                         <a href="#"
                            onclick="cal13.select(document.forms[0].startdate,'anchor13','MM/dd/yyyy'); return false;"
                            title="cal13.select(document.forms[0].startdate,'anchor13','MM/dd/yyyy'); return false;"
@@ -46,7 +52,8 @@
                 <div class="six columns ">
                     <label for="endDate" id="endDate">End Date</label>
 
-                        <input type="text" name="enddate" value="" size="25"/>
+                        <input th:field="*{enddate}" type="text" name="enddate" value="" size="25"/>
+                    <p th:if="${#fields.hasErrors('enddate')}" th:errors="*{enddate}" />
                         <a href="#"
                            onclick="cal13.select(document.forms[0].enddate,'anchor14','MM/dd/yyyy'); return false;"
                            title="cal13.select(document.forms[0].enddate,'anchor14','MM/dd/yyyy'); return false;"
@@ -57,7 +64,8 @@
 
 
                 <div class="six columns zero">
-                    <textarea cols="50" rows="3" maxlength="2000" placeholder="PROJECT DESCRIPTION"></textarea>
+                    <textarea th:field="*{projectdescription}" cols="50" rows="3" maxlength="2000" name="projectdescription" placeholder="PROJECT DESCRIPTION"></textarea>
+                    <p th:if="${#fields.hasErrors('projectdescription')}" th:errors="*{projectdescription}" />
 
                 </div>
 
