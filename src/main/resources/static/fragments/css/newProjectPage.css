@@ -5,7 +5,7 @@ body{
     font-family: 'DIN Next',sans-serif;
     text-transform: uppercase;
     color: white;
-    background: url("../../../static/images/reg-train.jpg");
+    background: url("/images/reg-train.jpg");
     /*background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.9) 100%), url("../../static/images/reg-train.jpg");*/
     -webkit-background-size: cover;
     background-size: cover;

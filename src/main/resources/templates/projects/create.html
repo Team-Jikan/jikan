@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Create New Project</title>
+    <link rel="stylesheet" href="/css/skeleton.css"/>
+    <link rel="stylesheet" href="/fragments/css/newProjectPage.css"/>
+
+
+</head>
+<body>
+<div class="container">
+    <form>
+        <div class="columns" id="loginBox">
+            <div class="six columns offset-by-three">
+                <h1>Create Project</h1>
+                <label for="projectName" id="project">Project Name</label>
+                <input class="u-full-width" id="projectName" name="projectname" type="text" placeholder="Project Name"/>
+
+                <label for="company" id="company">Customer</label>
+                <input class="u-full-width" id="companyName" name="customer" type="text" placeholder="Company"/>
+
+                <label for="customer" id="customer">Contact Name</label>
+                <input class="u-full-width" id="customerName" name="contactname" type="text" placeholder="Customer Name"/>
+
+                <label for="contact" id="contact">Contact Phone Number</label>
+                <input class="u-full-width" id="contactName" name="contactphone" type="text" placeholder="(area code) Phone Number"/>
+
+                <label for="email" id="email">Contact E-mail</label>
+                <input class="u-full-width" id="emailName" name="contactemail" type="text" placeholder="email"/>
+                <!--Date menus are here--------------------------------------------->
+                <div class="six columns zero">
+                    <label for="startDate" id="startDate">Start Date</label>
+
+                        <input type="text" name="startdate" value="" size="25"/>
+                        <a href="#"
+                           onclick="cal13.select(document.forms[0].startdate,'anchor13','MM/dd/yyyy'); return false;"
+                           title="cal13.select(document.forms[0].startdate,'anchor13','MM/dd/yyyy'); return false;"
+                           name="anchor13" id="anchor13">select</a>
+
+
+                </div>
+                <!--End date starts here------------------------------------>
+                <div class="six columns ">
+                    <label for="endDate" id="endDate">End Date</label>
+
+                        <input type="text" name="enddate" value="" size="25"/>
+                        <a href="#"
+                           onclick="cal13.select(document.forms[0].enddate,'anchor14','MM/dd/yyyy'); return false;"
+                           title="cal13.select(document.forms[0].enddate,'anchor14','MM/dd/yyyy'); return false;"
+                           name="anchor14" id="anchor14">select</a>
+
+                </div>
+
+
+
+                <div class="six columns zero">
+                    <textarea cols="50" rows="3" maxlength="2000" placeholder="PROJECT DESCRIPTION"></textarea>
+
+                </div>
+
+
+                <input class="u-full-width" id="newProjectSubmit" type="submit" value="Submit Project"/>
+
+            </div>
+
+        </div>
+    </form>
+</div>
+<script src="/scripts/calenderPopUp.js"></script>
+<script src="/scripts/calenderPopUpCallStart.js"></script>
+
+</body>
+</html>
