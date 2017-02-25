@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>NewProject</title>
+    <link rel="stylesheet" href="../static/css/skeleton.css">
+    <link rel="stylesheet" href="../static/fragments/css/newProjectPage.css">
+
+
+</head>
+<body>
+<div class="container">
+    <form>
+        <div class="columns" id="loginBox">
+            <div class="six columns offset-by-three">
+                <h1>Create Project</h1>
+                <label for="projectName" id="project">Project Name</label>
+                <input class="u-full-width" id="projectName" type="text" placeholder="Project Name">
+
+                <label for="company" id="company">Company</label>
+                <input class="u-full-width" id="companyName" type="text" placeholder="Company">
+
+                <label for="customer" id="customer">Customer Name</label>
+                <input class="u-full-width" id="customerName" type="text" placeholder="Customer Name">
+
+                <label for="contact" id="contact">Contact</label>
+                <input class="u-full-width" id="contactName" type="text" placeholder="(area code) Phone Number">
+
+                <label for="email" id="email">E-mail</label>
+                <input class="u-full-width" id="emailName" type="text" placeholder="email">
+                <!--Date menus are here--------------------------------------------->
+                <div class="six columns zero">
+                    <label for="startDate" id="startDate">Start Date</label>
+
+                        <input type="text" name="date13" value="" size="25">
+                        <a href="#"
+                           onclick="cal13.select(document.forms[0].date13,'anchor13','MM/dd/yyyy'); return false;"
+                           title="cal13.select(document.forms[0].date13,'anchor13','MM/dd/yyyy'); return false;"
+                           name="anchor13" id="anchor13">select</a>
+
+
+                </div>
+                <!--End date starts here------------------------------------>
+                <div class="six columns ">
+                    <label for="endDate" id="endDate">End Date</label>
+
+                        <input type="text" name="date14" value="" size="25">
+                        <a href="#"
+                           onclick="cal13.select(document.forms[0].date14,'anchor14','MM/dd/yyyy'); return false;"
+                           title="cal13.select(document.forms[0].date14,'anchor14','MM/dd/yyyy'); return false;"
+                           name="anchor14" id="anchor14">select</a>
+
+                </div>
+
+
+
+                <div class="six columns zero">
+                    <textarea cols="50" rows="3" maxlength="2000" placeholder="PROJECT DESCRIPTION"></textarea>
+
+                </div>
+
+
+                <input class="u-full-width" id="newProjectSubmit" type="submit" value="Submit Project">
+
+            </div>
+
+        </div>
+    </form>
+</div>
+<script src="../static/scripts/calenderPopUp.js"></script>
+<script src="../static/scripts/calenderPopUpCallStart.js"></script>
+
+</body>
+</html>
