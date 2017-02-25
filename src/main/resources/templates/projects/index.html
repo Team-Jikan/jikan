@@ -8,17 +8,17 @@
 </head>
 <body>
     <h1>Projects</h1>
-    <p th:each="post : ${posts}">
-    <h2 style="text-align: center"><span th:text="${post.title}"/></h2>
-    <h3 style="text-align: center"><span th:text="${post.body}"/></h3>
+    <p th:each="project : ${projects}">
+    <h2 style="text-align: center"><span th:text="${project.projectname}"/></h2>
+    <h3 style="text-align: center"><span th:text="${project.projectdescription}"/></h3>
     </p>
-    <div id="load-posts"></div>
+    <div id="load-projects"></div>
 
     <script
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"
     ></script>
-    <script src="/scripts/posts-list.js"></script>
+    <script src="/scripts/projects-list.js"></script>
 </body>
 </html>

@@ -1,18 +1,18 @@
 (function () {
     var request = $.ajax( {
-        url: '/posts.json'
+        url: '/projects.json'
     });
 
-    request.done(function (posts) { //the HTTP response -> an array of JSON objects
-        console.log(posts);
+    request.done(function (projects) { //the HTTP response -> an array of JSON objects
+        console.log(projects);
 
         var i, html = '';
 
-        for (i = 0; i < posts.length; i++) {
-            html += '<div><h2>' + posts[i].title + '</h2><p>' + posts[i].description + '</p></div>';
+        for (i = 0; i < projects.length; i++) {
+            html += '<div><h2>' + projects[i].projectname + '</h2><p>' + projects[i].projectdescription + '</p></div>';
         }
 
-        $('#load-posts').html(html);
+        $('#load-projects').html(html);
 
     });
 })();
