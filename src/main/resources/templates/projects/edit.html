@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Edit Project</title>
+    <link rel="stylesheet" href="/css/skeleton.css"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Post</h1>
+        <form th:action="@{'/project/' + *{id} + '/edit'}" method="post" th:object="${task}">
+            <label for="startdate">Start Date</label>
+            <input type="text" id="startdate" name="startdate" placeholder="please enter the project start date.." th:field="*{startdate}"/>
+            <p th:if="${#fields.hasErrors('startdate')}" th:errors="*{startdate}" />
+            <label for="enddate">End Date</label>
+            <input type="text" id="enddate" name="enddate" placeholder="please enter the project end date.." th:field="*{enddate}"/>
+            <p th:if="${#fields.hasErrors('enddate')}" th:errors="*{enddate}" />
+            <label for="tasks">Tasks</label>
+            <textarea type="text" id="tasks" name="tasks" placeholder="please enter the task description" th:field="*{tasks}"></textarea>
+            <p th:if="${#fields.hasErrors('tasks')}" th:errors="*{tasks}" />
+            <label for="billablehours">Billable Hours</label>
+            <input type="text" id="billablehours" name="billablehours" placeholder="please enter your billable hours" th:field="*{billablehours}"/>
+            <p th:if="${#fields.hasErrors('billablehours')}" th:errors="*{billablehours}" />
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
+</body>
+</html>
