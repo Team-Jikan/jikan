@@ -40,7 +40,7 @@ public class ProjectsController {
 
     @GetMapping("/projects.json")
     public @ResponseBody List<Project> retrieveAllProjects() {
-        return (List<Project>) projectDao.findAll();
+        return (List<Project>) projectDao.findByUser(userService.loggedInUser().getId());
     }
 
     @GetMapping("/projects/{id}")
