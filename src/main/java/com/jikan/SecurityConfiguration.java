@@ -47,8 +47,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 // restricted area
                 .authorizeRequests()
-                // only authenticated users can create posts and this is where you add the pages that you want protected
-                .antMatchers("/projects/create", "/projects", "projects/{id}/tasks/new")
+                // only authenticated users can create projects and this is where you add the pages that you want protected
+                .antMatchers("/projects/create", "/projects", "/projects/{projectid}/tasks/new")
                 .authenticated()
         ;
     }
