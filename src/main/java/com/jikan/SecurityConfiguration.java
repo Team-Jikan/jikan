@@ -34,7 +34,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/projects") // user's home page, it can be any URL
+                //.defaultSuccessUrl() // user's home page, it can be any URL
                 .permitAll() // Anyone can go to the login page
                 .and()
                 // non logged-in users
@@ -48,7 +48,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 // restricted area
                 .authorizeRequests()
                 // only authenticated users can create posts and this is where you add the pages that you want protected
-                .antMatchers("/projects/create")
+                .antMatchers("/projects/create", "/projects", "projects/{id}/tasks/new")
                 .authenticated()
         ;
     }
