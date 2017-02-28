@@ -9,7 +9,15 @@
 <body>
     <div class="container">
         <h1>Edit Post</h1>
-        <form th:action="@{'/project/' + *{id} + '/edit'}" method="post" th:object="${task}">
+
+        <!--a For loop that will build the table with the added tasks for the project-->
+        <p th:each="task : ${tasks}">
+        <h2 style="text-align: center"><span th:text="${task.tasks}"/></h2>
+        <h3 style="text-align: center"><span th:text="${task.billablehours}"/></h3>
+
+        </p>
+
+        <form th:action="@{'/projects/' + ${projectId} + '/tasks/new'}" method="post" th:object="${task}">
             <label for="startdate">Start Date</label>
             <input type="text" id="startdate" name="startdate" placeholder="please enter the project start date.." th:field="*{startdate}"/>
             <p th:if="${#fields.hasErrors('startdate')}" th:errors="*{startdate}" />
