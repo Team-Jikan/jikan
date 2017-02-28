@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <h1>Create Tasks for </h1>
-    <div th:each="task : ${tasks}">
+    <div>
         <table class="u-full-width">
             <thead>
             <tr>
@@ -20,7 +20,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
+            <tr th:each="task : ${tasks}">
                 <td th:text="${task.tasks}"/>
                 <td th:text="${task.billablehours}"/>
                 <td th:text="${task.startdate}"/>
