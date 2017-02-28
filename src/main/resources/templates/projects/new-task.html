@@ -10,64 +10,42 @@
 <div class="container">
     <h1>Create Tasks for </h1>
     <div th:each="task : ${tasks}">
-
-        <!--<h2 th:text="#{title.list}">Project List</h2>-->
-
-        <table>
+        <table class="u-full-width">
             <thead>
             <tr>
-                <th th:text="${task.tasks}">Tasks</th>
-                <th th:text="${task.billablehours}">Billable Hours</th>
-                <th th:text="${task.startdate}">Start Date</th>
-                <th th:text="${task.enddate}">End Date</th>
+                <th>Tasks</th>
+                <th>Billable Hours</th>
+                <th>Start Date</th>
+                <th>End Date</th>
             </tr>
             </thead>
-            <!--<tbody>-->
-            <!--<tr th:each="sb : ${allSeedStarters}">-->
-            <!--<td th:text="${{sb.datePlanted}}">13/01/2011</td>-->
-            <!--<td th:text="${sb.covered}? #{bool.true} : #{bool.false}">yes</td>-->
-            <!--<td th:text="#{${'seedstarter.type.' + sb.type}}">Wireframe</td>-->
-            <!--<td th:text="${#strings.arrayJoin(-->
-            <!--#messages.arrayMsg(-->
-            <!--#strings.arrayPrepend(sb.features,'seedstarter.feature.')),-->
-            <!--', ')}">Electric Heating, Turf</td>-->
-            <!--<td>-->
-            <!--<table>-->
-            <!--<tbody>-->
-            <!--<tr th:each="row,rowStat : ${sb.rows}">-->
-            <!--<td th:text="${rowStat.count}">1</td>-->
-            <!--<td th:text="${row.variety.name}">Thymus Thymi</td>-->
-            <!--<td th:text="${row.seedsPerCell}">12</td>-->
-            <!--</tr>-->
-            <!--</tbody>-->
-            <!--</table>-->
-            <!--</td>-->
-            <!--</tr>-->
-            <!--</tbody>-->
+            <tbody>
+            <tr>
+                <td th:text="${task.tasks}"/>
+                <td th:text="${task.billablehours}"/>
+                <td th:text="${task.startdate}"/>
+                <td th:text="${task.enddate}"/>
+            </tr>
+            </tbody>
         </table>
     </div>
-    <!--a For loop that will build the table with the added tasks for the project-->
-    <!--<p th:each="task : ${tasks}">-->
-    <!--<h2 style="text-align: center"><span th:text="${task.tasks}"/></h2>-->
-    <!--<h3 style="text-align: center"><span th:text="${task.billablehours}"/></h3>-->
-
-    <!--</p>-->
-    <!--edit above here-->
-    <form th:action="@{'/projects/' + ${projectId} + '/tasks/new'}" method="post" th:object="${task}">
-        <label for="startdate">Start Date</label>
-        <input type="text" id="startdate" name="startdate" placeholder="please enter the project start date.." th:field="*{startdate}"/>
-        <p th:if="${#fields.hasErrors('startdate')}" th:errors="*{startdate}" />
-        <label for="enddate">End Date</label>
-        <input type="text" id="enddate" name="enddate" placeholder="please enter the project end date.." th:field="*{enddate}"/>
-        <p th:if="${#fields.hasErrors('enddate')}" th:errors="*{enddate}" />
-        <label for="tasks">Tasks</label>
-        <textarea type="text" id="tasks" name="tasks" placeholder="please enter the task description" th:field="*{tasks}"></textarea>
-        <p th:if="${#fields.hasErrors('tasks')}" th:errors="*{tasks}" />
-        <label for="billablehours">Billable Hours</label>
-        <input type="text" id="billablehours" name="billablehours" placeholder="please enter your billable hours" th:field="*{billablehours}"/>
-        <p th:if="${#fields.hasErrors('billablehours')}" th:errors="*{billablehours}" />
-        <input type="submit" value="Submit"/>
-    </form>
+    <div>
+        <form th:action="@{'/projects/' + ${projectId} + '/tasks/new'}" method="post" th:object="${task}">
+            <!--<label for="startdate">Start Date</label>-->
+            <input type="text" id="startdate" name="startdate" placeholder="please enter the project start date.." th:field="*{startdate}"/>
+            <p th:if="${#fields.hasErrors('startdate')}" th:errors="*{startdate}" />
+            <!--<label for="enddate">End Date</label>-->
+            <input type="text" id="enddate" name="enddate" placeholder="please enter the project end date.." th:field="*{enddate}"/>
+            <p th:if="${#fields.hasErrors('enddate')}" th:errors="*{enddate}" />
+            <!--<label for="tasks">Tasks</label>-->
+            <textarea type="text" id="tasks" name="tasks" placeholder="please enter the task description" th:field="*{tasks}"></textarea>
+            <p th:if="${#fields.hasErrors('tasks')}" th:errors="*{tasks}" />
+            <!--<label for="billablehours">Billable Hours</label>-->
+            <input type="text" id="billablehours" name="billablehours" placeholder="please enter your billable hours" th:field="*{billablehours}"/>
+            <p th:if="${#fields.hasErrors('billablehours')}" th:errors="*{billablehours}" />
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
 </div>
 </body>
 </html>
