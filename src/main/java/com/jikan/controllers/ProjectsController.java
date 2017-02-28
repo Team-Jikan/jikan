@@ -1,7 +1,9 @@
 package com.jikan.controllers;
 
 import com.jikan.models.Project;
+import com.jikan.models.Task;
 import com.jikan.repositories.ProjectsRepository;
+import com.jikan.repositories.TasksRepository;
 import com.jikan.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,9 @@ public class ProjectsController {
 
     @Autowired
     ProjectsRepository projectDao;
+
+    @Autowired
+    TasksRepository taskDao;
 
     @Autowired
     UserService userService;
@@ -70,24 +75,30 @@ public class ProjectsController {
         return "redirect:/projects";
     }
 
-    @GetMapping("/projects/{id}/edit")
-    public String editProject(@PathVariable int id, @ModelAttribute Project project, Model viewModel) {
-        Project editedProject = projectDao.findOne(id);
-        viewModel.addAttribute("project", editedProject);
-        return "/projects/edit";
+    @GetMapping("/projects/{projectid}/tasks/new")
+    public String editProject(@PathVariable int projectid, Model viewModel) {
+//        Project editedProject = projectDao.findOne(id);
+        List<Task> tasks = taskDao.addedTasksForProject(projectid);
+        viewModel.addAttribute("tasks", tasks);
+        viewModel.addAttribute("task", new Task());
+        viewModel.addAttribute("projectId", projectid);
+        return "/projects/new-task";
     }
 
-    @PostMapping("/projects/{id}/edit")
-    public String updateProject (@Valid Project editedProject, Errors validation, Model viewModel) {
+    @PostMapping("/projects/{projectid}/tasks/new")
+    public String updateProject (@Valid Task addedTask, Errors validation, Model viewModel, @PathVariable int projectid) {
 
         if (validation.hasErrors()){
             viewModel.addAttribute("errors", validation);
-            viewModel.addAttribute("project", editedProject);
-            return "projects/edit";
+            viewModel.addAttribute("task", addedTask);
+            return "projects/new-task";
         }
 
-        projectDao.save(editedProject);
-        return "redirect:/projects";
+        Project project = new Project();
+        project.setId(projectid);
+        addedTask.setProject(project);
+        taskDao.save(addedTask);
+        return "redirect:/projects/" + projectid + "/tasks/new";
     }
 
 }

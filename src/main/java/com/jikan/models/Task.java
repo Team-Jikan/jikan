@@ -19,7 +19,6 @@ public class Task {
     private int id;
 
     @Column(nullable = false)
-    @NotBlank(message = "Field cannot be empty")
     private double billablehours;
 
     @Column(nullable = false)
@@ -27,19 +26,15 @@ public class Task {
     private String tasks;
 
     @Column(nullable = false)
-    @NotBlank(message = "Field cannot be empty")
     private Date startdate;
 
-    @Column(nullable = false)
-    @NotBlank(message = "Please enter a start time")
+    @Column(nullable = true)
     private Time starttime;
 
     @Column(nullable = false)
-    @NotBlank(message = "Field cannot be empty")
     private Date enddate;
 
-    @Column(nullable = false)
-    @NotBlank(message = "Please enter a start time")
+    @Column(nullable = true)
     private Time endtime;
 
     @ManyToOne
