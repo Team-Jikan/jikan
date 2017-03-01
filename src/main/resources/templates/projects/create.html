@@ -29,7 +29,7 @@
     </div>
     <div class="one-half column">
     <form th:action="@{/logout}" th:method="POST">
-        <button class="u-pull-right">Logout</button>
+        <button id="logoutButton" class="u-pull-right">Logout</button>
     </form>
     </div>
     <form th:action="@{/projects/create}" th:method="POST" th:object="${project}" enctype="multipart/form-data">
