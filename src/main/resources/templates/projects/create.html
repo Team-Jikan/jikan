@@ -9,8 +9,18 @@
     <link rel="stylesheet" href="/fragments/css/newProjectPage.css"/>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
     <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'/>
-
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="/resources/demos/style.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+        $( function() {
+            $( "#datepicker2" ).datepicker();
+        } );
+    </script>
 </head>
 <body>
 <div class="container">
@@ -49,12 +59,8 @@
                 <div class="six columns zero">
                     <label for="startDate" id="startDate">Start Date</label>
 
-                        <input th:field="*{startdate}" type="text" name="startdate" value="" size="25"/>
+                        <input th:field="*{startdate}" id="datepicker" type="text" name="startdate" value="" size="25"/>
                     <p th:if="${#fields.hasErrors('startdate')}" th:errors="*{startdate}" />
-                        <a href="#"
-                           onclick="cal13.select(document.forms[0].startdate,'anchor13','MM/dd/yyyy'); return false;"
-                           title="cal13.select(document.forms[0].startdate,'anchor13','MM/dd/yyyy'); return false;"
-                           name="anchor13" id="anchor13">select</a>
 
 
                 </div>
@@ -62,13 +68,8 @@
                 <div class="six columns ">
                     <label for="endDate" id="endDate">End Date</label>
 
-                        <input th:field="*{enddate}" type="text" name="enddate" value="" size="25"/>
+                        <input th:field="*{enddate}" id="datepicker2" type="text" name="enddate" value="" size="25"/>
                     <p th:if="${#fields.hasErrors('enddate')}" th:errors="*{enddate}" />
-                        <a href="#"
-                           onclick="cal13.select(document.forms[0].enddate,'anchor14','MM/dd/yyyy'); return false;"
-                           title="cal13.select(document.forms[0].enddate,'anchor14','MM/dd/yyyy'); return false;"
-                           name="anchor14" id="anchor14">select</a>
-
                 </div>
 
 
@@ -87,8 +88,6 @@
         </div>
     </form>
 </div>
-<script src="/scripts/calendarPopUp.min.js"></script>
-<script src="/scripts/calenderPopUpCallStart.js"></script>
 
 </body>
 </html>
