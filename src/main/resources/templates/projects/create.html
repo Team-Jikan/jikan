@@ -14,7 +14,18 @@
 </head>
 <body>
 <div class="container">
+
     <img src="/images/JikanBlack.png" height="115" width="115"/>
+
+    <div class="one-half column">
+    <img src="/images/jikanLogoBlue.png" height="115" width="115"/>
+    </div>
+    <div class="one-half column">
+    <form th:action="@{/logout}" th:method="POST">
+        <button class="u-pull-right">Logout</button>
+    </form>
+    </div>
+
     <form th:action="@{/projects/create}" th:method="POST" th:object="${project}" enctype="multipart/form-data">
         <div class="columns" id="loginBox">
             <div class="six columns offset-by-three">
