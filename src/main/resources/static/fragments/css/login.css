@@ -3,9 +3,6 @@
 }
 
 body{
-
-    font-family: 'DIN Next',sans-serif;
-    text-transform: uppercase;
     color: white;
     background: url("/images/reg-train.jpg");
     -webkit-background-size: cover;
@@ -13,10 +10,6 @@ body{
     background-repeat: no-repeat;
     background-attachment: scroll;
     max-width: 100%;
-}
-
-h1 {
-    font-weight: 700;
 }
 
 /*loginId*/

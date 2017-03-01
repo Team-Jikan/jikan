@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Edit Project</title>
     <link rel="stylesheet" href="/css/skeleton.css"/>
+    <link rel="stylesheet" href="/fragments/css/new-task.css"/>
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'/>
 </head>
 <body>
 <div class="container">
+    <img src="/images/jikanLogoBlue.png" height="150" width="150"/>
     <h1>Create Tasks for </h1>
     <div>
         <table class="u-full-width">
@@ -29,23 +32,34 @@
             </tbody>
         </table>
     </div>
-    <div>
         <form th:action="@{'/projects/' + ${projectId} + '/tasks/new'}" method="post" th:object="${task}">
-            <!--<label for="startdate">Start Date</label>-->
-            <input type="text" id="startdate" name="startdate" placeholder="please enter the project start date.." th:field="*{startdate}"/>
+            <div class="row">
+                <div class="six columns">
+                    <label for="tasks">Task Description</label>
+                    <input class="u-full-width" type="text" id="tasks" name="tasks" placeholder="Please enter the task description" th:field="*{tasks}"/>
+                    <p th:if="${#fields.hasErrors('tasks')}" th:errors="*{tasks}" />
+                </div>
+                <div class="six columns">
+                    <label for="billablehours">Billable Hours</label>
+                    <input class="u-full-width" type="text" id="billablehours" name="billablehours" placeholder="Please enter your billable hours" th:field="*{billablehours}"/>
+                    <p th:if="${#fields.hasErrors('billablehours')}" th:errors="*{billablehours}" />
+                </div>
+            <div class="row">
+                <div class="six columns">
+            <label for="startdate">Start Date</label>
+            <input class="u-full-width" type="text" id="startdate" name="startdate" placeholder="ex: 03/24/17" th:field="*{startdate}"/>
             <p th:if="${#fields.hasErrors('startdate')}" th:errors="*{startdate}" />
-            <!--<label for="enddate">End Date</label>-->
-            <input type="text" id="enddate" name="enddate" placeholder="please enter the project end date.." th:field="*{enddate}"/>
+                </div>
+                <div class="six columns">
+            <label for="enddate">End Date</label>
+            <input class="u-full-width" type="text" id="enddate" name="enddate" placeholder="ex: 03/27/17" th:field="*{enddate}"/>
             <p th:if="${#fields.hasErrors('enddate')}" th:errors="*{enddate}" />
-            <!--<label for="tasks">Tasks</label>-->
-            <textarea type="text" id="tasks" name="tasks" placeholder="please enter the task description" th:field="*{tasks}"></textarea>
-            <p th:if="${#fields.hasErrors('tasks')}" th:errors="*{tasks}" />
-            <!--<label for="billablehours">Billable Hours</label>-->
-            <input type="text" id="billablehours" name="billablehours" placeholder="please enter your billable hours" th:field="*{billablehours}"/>
-            <p th:if="${#fields.hasErrors('billablehours')}" th:errors="*{billablehours}" />
-            <input type="submit" value="Submit"/>
+                </div>
+                    <br/>
+            <input class="button-primary" type="submit" value="Submit"/>
+            </div>
+            </div>
         </form>
     </div>
-</div>
 </body>
 </html>
