@@ -6,6 +6,7 @@ import com.jikan.repositories.ProjectsRepository;
 import com.jikan.repositories.TasksRepository;
 import com.jikan.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -76,8 +77,10 @@ public class ProjectsController {
     }
 
     @GetMapping("/projects/{projectid}/tasks/new")
+    @PreAuthorize("@projectOwnerExpression.isOwner(principal, #projectid)")
     public String editProject(@PathVariable int projectid, Model viewModel) {
-//        Project editedProject = projectDao.findOne(id);
+        Project editedProject = projectDao.findOne(projectid);
+        viewModel.addAttribute("project", editedProject);
         List<Task> tasks = taskDao.addedTasksForProject(projectid);
         viewModel.addAttribute("tasks", tasks);
         viewModel.addAttribute("task", new Task());
@@ -86,9 +89,12 @@ public class ProjectsController {
     }
 
     @PostMapping("/projects/{projectid}/tasks/new")
+    @PreAuthorize("@projectOwnerExpression.isOwner(principal, #projectid)")
     public String updateProject (@Valid Task addedTask, Errors validation, Model viewModel, @PathVariable int projectid) {
 
         if (validation.hasErrors()){
+            Project editedProject = projectDao.findOne(projectid);
+            viewModel.addAttribute("project", editedProject);
             viewModel.addAttribute("errors", validation);
             viewModel.addAttribute("task", addedTask);
             return "projects/new-task";
