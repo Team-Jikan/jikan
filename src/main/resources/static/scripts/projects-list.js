@@ -9,7 +9,7 @@
         var i, html = '';
 
         for (i = 0; i < projects.length; i++) {
-            html += '<div class="container">' + '<img src="/images/JikanBlack.png" height="150" width="150"/>' + '<h1>Projects</h1>' + '<ul><li><div><h2>' + projects[i].projectname + '</h2><a class="button-primary" href="/projects/' + projects[i].id + '/tasks/new"><button>Add Task</button></a><button>Print</button><p>'
+            html += '<ul><li><div><h2>' + projects[i].projectname + '</h2><a class="button-primary" href="/projects/' + projects[i].id + '/tasks/new"><button>Add Task</button></a><button>Print</button><p>'
                 + '</p></div></li></ul></div>';
         }
 
