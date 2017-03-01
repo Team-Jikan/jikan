@@ -7,15 +7,16 @@
     <title>Create New Project</title>
     <link rel="stylesheet" href="/css/skeleton.css"/>
     <link rel="stylesheet" href="/fragments/css/newProjectPage.css"/>
-
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'/>
 
 </head>
 <body>
 <div class="container">
+    <img src="/images/jikanLogoBlue.png" height="115" width="115"/>
     <form th:action="@{/projects/create}" th:method="POST" th:object="${project}" enctype="multipart/form-data">
         <div class="columns" id="loginBox">
             <div class="six columns offset-by-three">
-                <h1>Create Project</h1>
+                <h1>CREATE PROJECT</h1>
                 <label for="projectName" id="project">Project Name</label>
                 <input th:field="*{projectname}" class="u-full-width" id="projectName" name="projectname" type="text" placeholder="Project Name"/>
                 <p th:if="${#fields.hasErrors('projectname')}" th:errors="*{projectname}" />
