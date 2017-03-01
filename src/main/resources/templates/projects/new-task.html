@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="/fragments/css/new-task.css"/>
     <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'/>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="/resources/demos/style.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+        $( function() {
+            $( "#datepicker2" ).datepicker();
+        } );
+    </script>
 </head>
 <body>
 <div class="container">
@@ -51,13 +63,13 @@
                 </div>
             <div class="row">
                 <div class="six columns">
-            <label for="startdate">Start Date</label>
-            <input class="u-full-width" type="text" id="startdate" name="startdate" placeholder="ex: 03/24/17" th:field="*{startdate}"/>
+            <label for="datepicker">Start Date</label>
+            <input class="u-full-width" type="text" id="datepicker" name="startdate" placeholder="ex: 03/24/17" th:field="*{startdate}"/>
             <p th:if="${#fields.hasErrors('startdate')}" th:errors="*{startdate}" />
                 </div>
                 <div class="six columns">
-            <label for="enddate">End Date</label>
-            <input class="u-full-width" type="text" id="enddate" name="enddate" placeholder="ex: 03/27/17" th:field="*{enddate}"/>
+            <label for="datepicker2">End Date</label>
+            <input class="u-full-width" type="text" id="datepicker2" name="enddate" placeholder="ex: 03/27/17" th:field="*{enddate}"/>
             <p th:if="${#fields.hasErrors('enddate')}" th:errors="*{enddate}" />
                 </div>
                     <br/>
