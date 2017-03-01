@@ -1,23 +1,3 @@
-// (function () {
-//     var request = $.ajax( {
-//         url: '/projects.json'
-//     });
-//
-//     request.done(function (projects) { //the HTTP response -> an array of JSON objects
-//         console.log(projects);
-//
-//         var i, html = '';
-//
-//         for (i = 0; i < projects.length; i++) {
-//             html += '<div><h2>' + projects[i].projectname + '</h2><p>' + projects[i].projectdescription + '</p></div>';
-//         }
-//
-//         $('#load-projects').html(html);
-//
-//     });
-// })();
-// //js.
-
 (function () {
     var request = $.ajax( {
         url: '/projects.json'
@@ -29,8 +9,8 @@
         var i, html = '';
 
         for (i = 0; i < projects.length; i++) {
-            html += '<ul><li><div><h2>' + projects[i].projectname + '</h2><button>Add Task</button><button>Print</button><p>'
-                + '</p></div>';
+            html += '<div class="container">' + '<img src="/images/JikanBlack.png" height="150" width="150"/>' + '<h1>Projects</h1>' + '<ul><li><div><h2>' + projects[i].projectname + '</h2><a href="new-task.html"><button>Add Task</button></a><button>Print</button><p>'
+                + '</p></div></li></ul></div>';
         }
 
         $('#load-projects').html(html);
