@@ -9,7 +9,7 @@
         var i, html = '';
 
         for (i = 0; i < projects.length; i++) {
-            html += '<li>' + projects[i].projectname + '</li><a class="button-primary" href="/projects/' + projects[i].id + '/tasks/new"><button>Add Task</button></a><button>Print</button>';
+            html += '<li>' + projects[i].projectname + '</li><a class="button-primary" href="/projects/' + projects[i].id + '/tasks/new"><button>Add Task</button></a><a class="button-primary" href="/projects/' + projects[i].id +'/print"><button>Print</button></a>';
         }
 
         $('#load-projects').html(html);

@@ -107,4 +107,16 @@ public class ProjectsController {
         return "redirect:/projects/" + projectid + "/tasks/new";
     }
 
+    @GetMapping("/projects/{projectid}/print")
+    @PreAuthorize("@projectOwnerExpression.isOwner(principal, #projectid)")
+    public String printProject(@PathVariable int projectid, Model viewModel) {
+        Project editedProject = projectDao.findOne(projectid);
+        viewModel.addAttribute("project", editedProject);
+        List<Task> tasks = taskDao.addedTasksForProject(projectid);
+        viewModel.addAttribute("tasks", tasks);
+        viewModel.addAttribute("projectId", projectid);
+
+        return "/projects/print";
+    }
+
 }
