@@ -9,11 +9,15 @@
         var i, html = '';
 
         for (i = 0; i < projects.length; i++) {
-            html += '<ul><li><div><h2>' + projects[i].projectname + '</h2><a class="button-primary" href="/projects/' + projects[i].id + '/tasks/new"><button>Add Task</button></a><button>Print</button><p>'
-                + '</p></div></li></ul></div>';
+            html += '<li>' + projects[i].projectname + '</li><a class="button-primary" href="/projects/' + projects[i].id + '/tasks/new"><button>Add Task</button></a><button>Print</button>';
         }
 
         $('#load-projects').html(html);
 
     });
 })();
+
+// ABOVE NEEDS TO GET PUSHED TO GITHUB
+// old code...
+// html += '<ul><li><div><h2>' + projects[i].projectname + '</h2><a class="button-primary" href="/projects/' + projects[i].id + '/tasks/new"><button>Add Task</button></a><button>Print</button><p>'
+//     + '</p></div></li></ul></div>';
