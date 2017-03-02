@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Error</title>
+    <link rel="stylesheet" href="/fragments/css/errorPage.css"/>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+</head>
+<body>
+<div id='oopss'>
+    <div id='error-text'>
+        <span>jikan</span>
+        <p>Error</p>
+        <p class='home'><a href="/" class="back">Back To Jikan Homepage</a></p>
+    </div>
+</div>
+
+<th:block th:switch="${error}">
+    <div th:case="'Not Found'">
+        <h1>Page not found!!</h1>
+    </div>
+    <div th:case="'Forbidden'">
+        <h1>You don't have permission to view this page.</h1>
+    </div>
+    <div th:case="'Bad Request'">
+        <h1>We cannot find this ad. Try the search form...</h1>
+    </div>
+
+    <p th:text="${error}"/>
+</th:block>
+
+
+</body>
+</html>
