@@ -28,14 +28,8 @@ public class Task {
     @Column(nullable = false)
     private Date startdate;
 
-    @Column(nullable = true)
-    private Time starttime;
-
     @Column(nullable = false)
     private Date enddate;
-
-    @Column(nullable = true)
-    private Time endtime;
 
     @ManyToOne
     @JoinColumn(name = "projects_id")
@@ -55,9 +49,7 @@ public class Task {
         this.billablehours = billablehours;
         this.tasks = tasks;
         this.startdate = startdate;
-        this.starttime = starttime;
         this.enddate = enddate;
-        this.endtime = endtime;
         this.project = project;
     }
 
@@ -101,28 +93,12 @@ public class Task {
         this.startdate = startdate;
     }
 
-    public Time getStarttime() {
-        return starttime;
-    }
-
-    public void setStarttime(Time starttime) {
-        this.starttime = starttime;
-    }
-
     public Date getEnddate() {
         return enddate;
     }
 
     public void setEnddate(Date enddate) {
         this.enddate = enddate;
-    }
-
-    public Time getEndtime() {
-        return endtime;
-    }
-
-    public void setEndtime(Time endtime) {
-        this.endtime = endtime;
     }
 
     public Project getProject() {
