@@ -12,19 +12,26 @@
 <body>
 <div class="container">
     <img src="/images/jikanLogoBlue.png" height="150" width="150"/>
-    <form th:action="@{/login}" th:method="POST">
+
         <div class="columns">
             <div class="six columns offset-by-three">
                 <h1>LOGIN</h1>
+                <div th:if="${param.error}">
+                    Invalid Username and Password.
+                </div>
+                <div th:if="${param.logout}">
+                    You have been logged out.
+                </div>
+                <form th:action="@{/login}" th:method="POST">
                 <label for="username" id="usernameLabel">Username</label>
                 <input class="u-full-width" id="username" type="text" name="username" placeholder="Username"/>
                 <label for="password" id="passwordLabel">Password</label>
                 <input class="u-full-width" id="password" type="password" name="password" placeholder="Password"/>
                 <br/><br/>
                 <input class="u-full-width" id="login" type="submit" value="Login"/>
+                </form>
             </div>
         </div>
-    </form>
 </div>
 </body>
 </html>
