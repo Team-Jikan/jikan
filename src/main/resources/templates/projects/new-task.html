@@ -47,8 +47,8 @@
             <tr th:each="task : ${tasks}">
                 <td th:text="${task.tasks}"/>
                 <td th:text="${task.billablehours}"/>
-                <td th:text="${task.startdate}"/>
-                <td th:text="${task.enddate}"/>
+                <td th:text="${#calendars.format(task.startdate, 'dd MMMM yyyy')}"/>
+                <td th:text="${#calendars.format(task.enddate,'dd MMMM yyyy')}"/>
             </tr>
             </tbody>
         </table>

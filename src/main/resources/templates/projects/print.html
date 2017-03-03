@@ -22,6 +22,7 @@
 <br/><br/><br/><br/><br/>
 <div>
     <h1><span th:text="${project.projectname}"></span></h1>
+    <h5>Contractor: <span th:text="${project.user.username}"/></h5>
     <h5>Customer: <span th:text="${project.customer}"/></h5>
     <h5>Project Description</h5><p th:text="${project.projectdescription}"/>
     <table class="u-full-width">
@@ -37,8 +38,8 @@
         <tr th:each="task : ${tasks}">
             <td th:text="${task.tasks}"/>
             <td th:text="${task.billablehours}"/>
-            <td th:text="${task.startdate}"/>
-            <td th:text="${task.enddate}"/>
+            <td th:text="${#calendars.format(task.startdate, 'dd MMMM yyyy')}"/>
+            <td th:text="${#calendars.format(task.enddate,'dd MMMM yyyy')}"/>
         </tr>
         </tbody>
     </table>
