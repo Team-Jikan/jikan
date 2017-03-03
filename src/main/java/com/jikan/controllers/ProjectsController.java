@@ -35,6 +35,7 @@ public class ProjectsController {
     public String viewAllProjects (Model viewModel) {
 
         viewModel.addAttribute("projects", Collections.emptyList());
+        viewModel.addAttribute("user", userService.loggedInUser());
 
         return "projects/index";
     }
