@@ -15,8 +15,8 @@ Jikan provides users with one-click time tracking, calendar integration, and a g
 </ul>
 <h2>Authors</h2>
 <ul>
-<li><a href="https://github.com/V-Rod" target="_blank">Pedro Valazquez</li>
-<li><a href="https://github.com/joneskj55" target="_blank">Kevin Jones</li>
-<li><a href="https://github.com/stoked49" target="_blank">Pierre Irby</li>
-<li><a href="https://github.com/Desertcoqui" target="_blank">Ferdinand Detres</li>
+<li>Pedro Valazquez</li>
+<li>Kevin Jones</li>
+<li>Pierre Irby</li>
+<li>Ferdinand Detres</li>
 </ul>
